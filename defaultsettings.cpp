@@ -96,6 +96,8 @@ void set_default_settings()
 	//SaiyanClient
 	settings->setDefault("priv_hack", "false");
 	settings->setDefault("fullbright", "false");
+	settings->setDefault("nohurtcam", "false");
+	settings->setDefault("no_hit_delay", "false");
 
 	// Client
 	settings->setDefault("address", "");
