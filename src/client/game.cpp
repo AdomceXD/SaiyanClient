@@ -4536,9 +4536,9 @@ void Game::showPauseMenu()
 	}
 	os		<< "textarea[0.4,0.25;3.9,6.25;;" << PROJECT_NAME_C " " VERSION_STRING "\n"
 		<< "\n"
-		<<  strgettext("Game info:") << "\n";
+		<<  strgettext("Client Info:") << "\n";
 	const std::string &address = client->getAddressName();
-	os << strgettext("- Mode: ");
+	os << strgettext("-Saiyan Client\n\nMade by: AdomceXD\n\nServer type:\n-");
 	if (!simple_singleplayer_mode) {
 		if (address.empty())
 			os << strgettext("Hosting server");
