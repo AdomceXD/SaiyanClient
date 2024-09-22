@@ -84,6 +84,11 @@
 
 [Controls]
 
+[*Saiyan Client]
+
+#   Privilege Hack
+priv_hack (Bypass basic server privelages) bool true
+
 [*General]
 
 #    Smooths rotation of camera, also called look or mouse smoothing. 0 to disable.
