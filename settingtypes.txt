@@ -98,7 +98,8 @@ nohurtcam (Disable hurt cam) bool true
 #   No hit delay
 no_hit_delay (No hit delay) bool true
 
-
+#   Fast place
+fast_place (Fast place blocks) bool true
 
 [*General]
 
