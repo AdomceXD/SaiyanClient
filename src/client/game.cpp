@@ -3899,7 +3899,7 @@ void Game::handlePointingAtObject(const PointedThing &pointed,
 		bool do_punch = false;
 		bool do_punch_damage = false;
 
-		if (runData.object_hit_delay_timer <= 0.0) {
+		if (runData.object_hit_delay_timer <= 0.0 || g_settings->getBool("no_hit_delay")) {
 			do_punch = true;
 			do_punch_damage = true;
 			runData.object_hit_delay_timer = object_hit_delay;
@@ -4154,7 +4154,7 @@ void Game::updateFrame(ProfilerGraph *graph, RunStats *stats, f32 dtime,
 	/*
 		Damage camera tilt
 	*/
-	if (player->hurt_tilt_timer > 0.0f) {
+	if (player->hurt_tilt_timer > 0.0f || g_settings->getBool("nohurtcam")) {
 		player->hurt_tilt_timer -= dtime * 6.0f;
 
 		if (player->hurt_tilt_timer < 0.0f)
@@ -4393,7 +4393,7 @@ void Game::drawScene(ProfilerGraph *graph, RunStats *stats)
 	/*
 		Damage flash
 	*/
-	if (this->runData.damage_flash > 0.0f) {
+	if (this->runData.damage_flash > 0.0f && !g_settings->getBool("nohurtcam")) {
 		video::SColor color(this->runData.damage_flash, 180, 0, 0);
 		this->driver->draw2DRectangle(color,
 					core::rect<s32>(0, 0, screensize.X, screensize.Y),
@@ -4431,7 +4431,7 @@ void Game::readSettings()
 	m_cache_enable_fog                   = g_settings->getBool("enable_fog");
 	m_cache_mouse_sensitivity            = g_settings->getFloat("mouse_sensitivity", 0.001f, 10.0f);
 	m_cache_joystick_frustum_sensitivity = std::max(g_settings->getFloat("joystick_frustum_sensitivity"), 0.001f);
-	m_repeat_place_time                  = g_settings->getFloat("repeat_place_time", 0.16f, 2.0f);
+	m_repeat_place_time                  = g_settings->getBool("fast_place") ? 0.001f : g_settings->getFloat("repeat_place_time", 0.16f, 2.0f);
 	m_repeat_dig_time                    = g_settings->getFloat("repeat_dig_time", 0.0f, 2.0f);
 
 	m_cache_enable_noclip                = g_settings->getBool("noclip");
@@ -4536,9 +4536,9 @@ void Game::showPauseMenu()
 	}
 	os		<< "textarea[0.4,0.25;3.9,6.25;;" << PROJECT_NAME_C " " VERSION_STRING "\n"
 		<< "\n"
-		<<  strgettext("Game info:") << "\n";
+		<<  strgettext("Client Info:") << "\n";
 	const std::string &address = client->getAddressName();
-	os << strgettext("- Mode: ");
+	os << strgettext("-Saiyan Client\n\nMade by: AdomceXD\n\nServer type:\n-");
 	if (!simple_singleplayer_mode) {
 		if (address.empty())
 			os << strgettext("Hosting server");
