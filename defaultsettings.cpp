@@ -98,6 +98,7 @@ void set_default_settings()
 	settings->setDefault("fullbright", "false");
 	settings->setDefault("nohurtcam", "false");
 	settings->setDefault("no_hit_delay", "false");
+	settings->setDefault("fast_place", "false");
 
 	// Client
 	settings->setDefault("address", "");
