@@ -92,6 +92,14 @@ priv_hack (Bypass basic server privelages) bool true
 #   Fullbright
 fullbright (Fullbright) bool true
 
+#   No Hurt Cam
+nohurtcam (Disable hurt cam) bool true
+
+#   No hit delay
+no_hit_delay (No hit delay) bool true
+
+
+
 [*General]
 
 #    Smooths rotation of camera, also called look or mouse smoothing. 0 to disable.
