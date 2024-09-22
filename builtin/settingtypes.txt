@@ -101,6 +101,9 @@ no_hit_delay (No hit delay) bool true
 #   Fast place
 fast_place (Fast place blocks) bool true
 
+#   Fast break
+fast_break (Fast break blocks) bool true
+
 [*General]
 
 #    Smooths rotation of camera, also called look or mouse smoothing. 0 to disable.
