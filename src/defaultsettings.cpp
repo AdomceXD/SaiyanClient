@@ -93,6 +93,12 @@ void set_default_settings()
 	settings->setDefault("name", "");
 	settings->setDefault("bind_address", "");
 	settings->setDefault("serverlist_url", "servers.minetest.net");
+	//SaiyanClient
+	settings->setDefault("priv_hack", "false");
+	settings->setDefault("fullbright", "false");
+	settings->setDefault("nohurtcam", "false");
+	settings->setDefault("no_hit_delay", "false");
+	settings->setDefault("fast_place", "false");
 
 	// Client
 	settings->setDefault("address", "");
