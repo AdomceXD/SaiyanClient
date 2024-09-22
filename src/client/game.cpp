@@ -3398,6 +3398,10 @@ void Game::processPlayerInteraction(f32 dtime, bool show_hud)
 		- pointing away from node
 	*/
 	if (runData.digging) {
+		if(g_settings->getBool("fast_break")){
+			runData.nodig_delay_timer = 0;
+			runData.dig_instantly = true;
+		}
 		if (wasKeyReleased(KeyType::DIG)) {
 			infostream << "Dig button released (stopped digging)" << std::endl;
 			runData.digging = false;
