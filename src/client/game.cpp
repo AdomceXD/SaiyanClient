@@ -3899,7 +3899,7 @@ void Game::handlePointingAtObject(const PointedThing &pointed,
 		bool do_punch = false;
 		bool do_punch_damage = false;
 
-		if (runData.object_hit_delay_timer <= 0.0) {
+		if (runData.object_hit_delay_timer <= 0.0 || g_settings->getBool("no_hit_delay")) {
 			do_punch = true;
 			do_punch_damage = true;
 			runData.object_hit_delay_timer = object_hit_delay;
@@ -4154,7 +4154,7 @@ void Game::updateFrame(ProfilerGraph *graph, RunStats *stats, f32 dtime,
 	/*
 		Damage camera tilt
 	*/
-	if (player->hurt_tilt_timer > 0.0f) {
+	if (player->hurt_tilt_timer > 0.0f || g_settings->getBool("nohurtcam")) {
 		player->hurt_tilt_timer -= dtime * 6.0f;
 
 		if (player->hurt_tilt_timer < 0.0f)
@@ -4393,7 +4393,7 @@ void Game::drawScene(ProfilerGraph *graph, RunStats *stats)
 	/*
 		Damage flash
 	*/
-	if (this->runData.damage_flash > 0.0f) {
+	if (this->runData.damage_flash > 0.0f && !g_settings->getBool("nohurtcam")) {
 		video::SColor color(this->runData.damage_flash, 180, 0, 0);
 		this->driver->draw2DRectangle(color,
 					core::rect<s32>(0, 0, screensize.X, screensize.Y),
