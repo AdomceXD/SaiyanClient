@@ -4027,7 +4027,7 @@ void Game::handleDigging(const PointedThing &pointed, const v3s16 &nodepos,
 		if (runData.nodig_delay_timer > 0.3f)
 			runData.nodig_delay_timer = 0.3f;
 		else if (runData.dig_instantly)
-			runData.nodig_delay_timer = 0.15f;
+			runData.nodig_delay_timer = 0.0f;
 
 		// Ensure that the delay between breaking nodes
 		// (dig_time_complete + nodig_delay_timer) is at least the
