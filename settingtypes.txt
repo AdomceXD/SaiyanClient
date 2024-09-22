@@ -84,6 +84,14 @@
 
 [Controls]
 
+[*Saiyan Client]
+
+#   Privilege Hack
+priv_hack (Bypass basic server privelages) bool true
+
+#   Fullbright
+fullbright (Fullbright) bool true
+
 [*General]
 
 #    Smooths rotation of camera, also called look or mouse smoothing. 0 to disable.
@@ -121,9 +129,6 @@ repeat_dig_time (Minimum dig repetition interval) float 0.0 0.0 2.0
 
 #    Automatically jump up single-node obstacles.
 autojump (Automatic jumping) bool false
-
-#   Privilege Hack
-priv_hack (Privilege hack) bool true
 
 #    Prevent digging and placing from repeating when holding the respective buttons.
 #    Enable this when you dig or place too often by accident.

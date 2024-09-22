@@ -95,6 +95,7 @@ void set_default_settings()
 	settings->setDefault("serverlist_url", "servers.minetest.net");
 	//SaiyanClient
 	settings->setDefault("priv_hack", "false");
+	settings->setDefault("fullbright", "false");
 
 	// Client
 	settings->setDefault("address", "");
