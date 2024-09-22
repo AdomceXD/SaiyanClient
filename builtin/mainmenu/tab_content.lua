@@ -282,9 +282,9 @@ return {
 	caption = function()
 		local update_count = core.settings:get_bool("contentdb_enable_updates_indicator") and update_detector.get_count() or 0
 		if update_count == 0 then
-			return fgettext("Content")
+			return fgettext("Mods")
 		else
-			return fgettext("Content [$1]", update_count)
+			return fgettext("Mods [$1]", update_count)
 		end
 	end,
 	cbf_formspec = get_formspec,
